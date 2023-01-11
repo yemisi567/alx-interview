@@ -1,26 +1,30 @@
 #!/usr/bin/python3
-
-'''
-Given a number n, write a method that calculates
-the fewest number of operations needed to result in
-exactly n H characters in the file.
-'''
+"""
+Module for finding the minimum number of operations to get n amount of Hs
+"""
 
 
 def minOperations(n):
-    '''
-    returns min operations to get n Hs
-    '''
-    result = 0
-    index = 2
-    if n < 2:
+    """
+    Function that finds le minimum number of operations to get n amount of Hs
+    """
+    if type(n) is not int:
         return 0
-    while (index < n + 1):
-        # Check if problem is evenly brekadownable
-        while n % index == 0:
-            # If so add number of smaller problems to the result
-            result += index
-            # Create the smaller problem needed to get to n
-            n /= index
-        index += 1
-    return result
+    if n <= 1:
+        return 0
+
+    ops = 0
+    chars = 1
+    copy = 1
+
+    while chars < n:
+        if n % chars == 0:
+            copy = chars
+            ops += 1
+        if chars != n:
+            chars += copy
+            ops += 1
+        else:
+            break
+
+    return ops
