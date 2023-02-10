@@ -2,7 +2,7 @@
 
 const request = require("request");
 const filmId = process.argv[2];
-const url = `https://swapi-api.hbtn.io/api/films/${filmId}`;
+const url = `https://swapi-api.alx-tools.com/api/films/${filmId}`;
 
 request(url, async (err, response, body) => {
   if (err) {
