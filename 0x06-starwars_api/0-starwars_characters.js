@@ -2,7 +2,7 @@
 // https://swapi-api.alx-tools.com/api/films/
 /* Star Wars Characters - Using the request module */
 const request = require("request");
-const urlApi = "https://swapi-api.hbtn.io/api/films/";
+const urlApi = "https://swapi-api.alx-tools.com/api/films/";
 const movieId = process.argv[2];
 // query API
 request(urlApi + movieId, (error, response, body) => {
