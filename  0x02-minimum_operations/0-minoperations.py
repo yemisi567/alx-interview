@@ -23,4 +23,4 @@ def minOperations(n):
             # Create the smaller problem needed to get to n
             n /= index
         index += 1
-    return result
+    return
